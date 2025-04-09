@@ -10,12 +10,13 @@ const app = express();
 const PORT = 5000;
 
 app.use(express.json());
-app.use(cors());
+
 // Prevent requests from other sites
-// app.use(cors({
-//     origin: "https://laura-haas.dev",
-//     methods: ["POST"],
-// }));
+// app.use(cors()); // local env
+app.use(cors({
+    origin: "https://laura-haas.dev",
+    methods: ["POST"],
+}));
 
 // Anti spam
 const limiter = rateLimit({
@@ -33,4 +34,4 @@ app.use("/send", limiter);
 app.use("/send", emailRoutes);
 
 // Start the server
-app.listen(PORT, () => console.log(`Serveur en écoute sur http://localhost:${PORT}`));
+// app.listen(PORT, () => console.log(`Serveur en écoute sur http://localhost:${PORT}`));

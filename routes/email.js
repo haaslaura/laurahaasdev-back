@@ -24,6 +24,8 @@ router.post("/", async (req, res) => {
     }
 
     try {
+
+        // throw new Error("test d'erreur")
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,

@@ -7,7 +7,7 @@ const rateLimit = require("express-rate-limit");
 const emailRoutes = require("./routes/email")
 
 const app = express();
-const PORT = 5000;
+const PORT = 4000;
 
 app.use(express.json());
 
@@ -35,3 +35,4 @@ app.use("/send", emailRoutes);
 
 // Start the server
 // app.listen(PORT, () => console.log(`Serveur en écoute sur http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Serveur en écoute sur https://api.mailer.laura-haas.dev:${PORT}`));

@@ -3,7 +3,7 @@
 
 node_modules
 .env
-laura-haas.dev
+laura-haas.dev.service
 
 # Editor directories and files
 .vscode/*

@@ -11,7 +11,7 @@ const logError = require("../utils/logError");
 
 
 router.post("/", async (req, res) => {
-    const { name, email, phone, message } = req.body;
+    const { name, email, phone, message } = req.body;    
 
     // Sanitize
     const sanitizedEmail = validator.normalizeEmail(email);
@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
     } catch (error) {
         console.error(error);
         logError(error);
-        res.status(500).json({ success: false, message: "Échec de l'envoi de l'email." });
+        res.status(500).json({ success: false, message: `Échec de l'envoi de l'email: ${error}` });
     }
 });
 
